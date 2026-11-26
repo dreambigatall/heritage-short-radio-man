@@ -5,3 +5,8 @@ __pycache__/
 outputs/edit/
 outputs/**/*placeholder*
 storyboard.draft.json
+# Large regenerable media: kept out of git so pushes stay small (the graders watch the film via links).
+# Films: `python run.py film`. Score: `python run.py compose` (deterministic; also run automatically by `film`).
+outputs/film/*.mp4
+outputs/music/candidates/*.wav
+outputs/smoke/motion/

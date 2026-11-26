@@ -1,55 +1,55 @@
 {
   "s01": {
     "file": "outputs/narration/s01_d9147b5a35.wav",
-    "duration_s": 10.851,
+    "duration_s": 10.69,
     "hash": "d9147b5a35",
     "placeholder": false
   },
   "s02": {
     "file": "outputs/narration/s02_669741d3bf.wav",
-    "duration_s": 7.231,
+    "duration_s": 7.07,
     "hash": "669741d3bf",
     "placeholder": false
   },
   "s03": {
     "file": "outputs/narration/s03_4bf3e73723.wav",
-    "duration_s": 7.801,
+    "duration_s": 7.64,
     "hash": "4bf3e73723",
     "placeholder": false
   },
   "s04": {
     "file": "outputs/narration/s04_2a31ef6991.wav",
-    "duration_s": 4.091,
+    "duration_s": 3.93,
     "hash": "2a31ef6991",
     "placeholder": false
   },
   "s05": {
     "file": "outputs/narration/s05_67c9457f06.wav",
-    "duration_s": 8.571,
+    "duration_s": 8.41,
     "hash": "67c9457f06",
     "placeholder": false
   },
   "s06": {
     "file": "outputs/narration/s06_2f5ba22f6e.wav",
-    "duration_s": 5.741,
+    "duration_s": 5.58,
     "hash": "2f5ba22f6e",
     "placeholder": false
   },
   "s07": {
     "file": "outputs/narration/s07_655149185e.wav",
-    "duration_s": 7.051,
+    "duration_s": 6.89,
     "hash": "655149185e",
     "placeholder": false
   },
   "s08": {
     "file": "outputs/narration/s08_928e862a2c.wav",
-    "duration_s": 8.061,
+    "duration_s": 7.9,
     "hash": "928e862a2c",
     "placeholder": false
   },
   "s09": {
     "file": "outputs/narration/s09_e7b30fe6b5.wav",
-    "duration_s": 7.881,
+    "duration_s": 7.72,
     "hash": "e7b30fe6b5",
     "placeholder": false
   }

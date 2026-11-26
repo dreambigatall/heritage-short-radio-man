@@ -1,7 +1,7 @@
 {
   "$schema": "./schema/storyboard.schema.json",
   "title": "The Radio Man (የሬዲዮ ሰው)",
-  "logline": "My father taught himself to repair radios in a small Ethiopian town, and that is why I write code today.",
+  "logline": "A fictional son remembers how his father taught himself to repair radios in a small Ethiopian town, and why the son writes code today.",
   "language": "am",
   "audience": "My family (parents, siblings, cousins at home and in the diaspora) and young Ethiopians learning tech; watching on phones, mostly vertical, shared on WhatsApp and Telegram.",
   "intent": "Feel pride in an ordinary man's curiosity, and see that fixing radios and writing code are the same gift passed from father to child.",
@@ -20,13 +20,13 @@
   "characters": [
     {
       "id": "father_young",
-      "name": "Father, in his early twenties (1980s)",
+      "name": "The father (fictional), in his early twenties (1980s)",
       "description": "a young Habesha Ethiopian man in his early twenties, slim, dark brown skin, short tightly curled black hair, thin moustache, narrow face with high cheekbones, white short-sleeved button shirt, brown trousers",
       "seed": 2001
     },
     {
       "id": "father_old",
-      "name": "Father, today",
+      "name": "The father (fictional), today",
       "description": "a Habesha Ethiopian man in his sixties, dark brown skin, short tightly curled grey hair, grey moustache, narrow face with high cheekbones, round reading glasses, beige cardigan over a white shirt",
       "seed": 2002
     }
@@ -53,23 +53,25 @@
         ]
       }
     ],
-    "chosen": "tizita_main_seed11_1822ca2a5c.wav",
-    "chosen_reason": "Provisional: of the three tizita-synth-v2 candidates, seed 11 has the smallest share of melodic energy (34% in 300 Hz-3 kHz vs 38% and 40%), so it competes least with the narration, following the brief's 'no strong lead melody' advice. To be confirmed by listening under the narration (EXPERIMENTS E7).",
+    "chosen": "tizita_main_seed11_6b112f548a.wav",
+    "chosen_reason": "tizita-synth-v4, seed 11: krar theme + bowed masenqo-like string + hand drum + bass, added after user test 1 ('sound lacks taste'). Of the three v4 seeds it has the least melodic energy (35% in 300 Hz-3 kHz vs 41-43%), so it competes least with the narration (EXPERIMENTS E7).",
     "music_gain_db": -6
   },
   "output": {
     "fps": 24,
     "quality": "final",
     "narration_pad_s": 0.6,
-    "narration_lead_s": 0.3
+    "narration_lead_s": 0.3,
+    "dissolve_s": 0.6,
+    "sfx_gain_db": 0
   },
   "end_card": {
     "lines": [
       "Made with AI",
+      "A work of fiction, inspired by a novel I read",
       "Images: FLUX.2 klein",
       "Voice: Gemini 3.8 Flash Lite TTS",
-      "Music: original score composed in code (tizita scale)",
-      "My father's story, shared with his consent"
+      "Music & sound: composed in code (tizita scale)"
     ],
     "duration_s": 3
   },
@@ -85,7 +87,9 @@
       "video": "kenburns",
       "narration": "በ1980ዎቹ መጨረሻ፣ በትንሽ ከተማችን ሬዲዮ የዓለም መስኮት ነበር። ዜና፣ ሙዚቃ፣ እግር ኳስ - ሁሉም በሬዲዮ ይመጣ ነበር።",
       "subtitle_en": "In the late 1980s, in our small town, radio was the window to the world. News, music, football – everything came through the radio.",
-      "music_cue": "main"
+      "music_cue": "main",
+      "sfx": "street",
+      "effects": []
     },
     {
       "id": "s02",
@@ -101,7 +105,9 @@
       "video": "kenburns",
       "narration": "አባቴ ገና ወጣት እያለ አንድ የተበላሸ ሬዲዮ አገኘ። ከመጣል ይልቅ ምን እንዳለ ለማየት ከፈተው።",
       "subtitle_en": "When my father was still young, he found a broken radio. Instead of throwing it away, he opened it to see what was inside.",
-      "music_cue": "main"
+      "music_cue": "main",
+      "sfx": "static",
+      "effects": []
     },
     {
       "id": "s03",
@@ -117,7 +123,11 @@
       "video": "kenburns",
       "narration": "አስተማሪም ሆነ መጽሐፍ አልነበረውም። በኬሮሲን ፋኖስ ብርሃን ሌሊት ሙሉ ሽቦዎችን በጥንቃቄ ይፈትሻል።",
       "subtitle_en": "He had no teacher or books. By the light of a kerosene lamp, night after night, he carefully traced the wires.",
-      "music_cue": "main"
+      "music_cue": "main",
+      "sfx": "static",
+      "effects": [
+        "flicker"
+      ]
     },
     {
       "id": "s04",
@@ -134,7 +144,11 @@
       "narration": "ሬዲዮው እንደገና እስኪናገር ድረስ ሳይታክት ይሰራ ነበር።",
       "subtitle_en": "He worked tirelessly until the radio spoke again.",
       "music_cue": "main",
-      "use_reference": false
+      "use_reference": false,
+      "sfx": "tuning",
+      "effects": [
+        "flicker"
+      ]
     },
     {
       "id": "s05",
@@ -147,7 +161,9 @@
       "video": "kenburns",
       "narration": "ወሬው ተሰራጨ። ጎረቤቶች ሬዲዮዎቻቸውን ማምጣት ጀመሩ። ጠረጴዛው በሽቦና በመለዋወጫ ሞላ።",
       "subtitle_en": "Word spread. Neighbors started bringing their radios. His table filled with wires and spare parts.",
-      "music_cue": "main"
+      "music_cue": "main",
+      "sfx": "room",
+      "effects": []
     },
     {
       "id": "s06",
@@ -160,7 +176,9 @@
       "video": "kenburns",
       "narration": "ቅዳሜዎች ሰዎች ዜና ወይም የእግር ኳስ ጨዋታ እንዳያመልጣቸው ከበሩ ውጭ ይጠብቁ ነበር።",
       "subtitle_en": "On Saturdays, people waited outside his door so they wouldn't miss the news or the football match.",
-      "music_cue": "main"
+      "music_cue": "main",
+      "sfx": "crowd",
+      "effects": []
     },
     {
       "id": "s07",
@@ -177,7 +195,9 @@
       "narration": "አንድ ጊዜ እንዲህ ብሎኝ ነበር፡ \"የተበላሸ ነገር ሁሉ ሊታወቅ ይችላል። መክፈትና ማየት ብቻ ነው የሚያስፈልገው።\"",
       "subtitle_en": "He once told me: \"Everything that is broken can be understood. You just have to open it and look.\"",
       "music_cue": "main",
-      "use_reference": false
+      "use_reference": false,
+      "sfx": "room",
+      "effects": []
     },
     {
       "id": "s08",
@@ -190,7 +210,9 @@
       "video": "kenburns",
       "narration": "ዛሬ እኔም ነገሮችን አስተካክላለሁ። ሬዲዮ ሳይሆን ኮድ። ፕሮግራም ሲበላሽ እከፍታለሁ፣ እርሱ እንዳስተማረኝ።",
       "subtitle_en": "Today, I fix things too. Not radios, but code. When a program breaks, I open it and look, just as he taught me.",
-      "music_cue": "main"
+      "music_cue": "main",
+      "sfx": "typing",
+      "effects": []
     },
     {
       "id": "s09",
@@ -203,7 +225,9 @@
       "video": "kenburns",
       "narration": "የእርሱ ጠረጴዛ የእኔ ላፕቶፕ ሆነ። ተመሳሳይ የማወቅ ጉጉት፣ አዲስ አይነት ሽቦ። የሬዲዮ ሰው ልጅ።",
       "subtitle_en": "His table became my laptop. The same curiosity, a new kind of wire. The Radio Man's child.",
-      "music_cue": "main"
+      "music_cue": "main",
+      "sfx": "typing",
+      "effects": []
     }
   ]
 }

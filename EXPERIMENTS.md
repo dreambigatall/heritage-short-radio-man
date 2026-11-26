@@ -58,7 +58,15 @@ Template:
 - **Change:** Measured the spectral energy of the three v1 candidates, then lowered the drone by about 7 dB (v2) and measured again.
 - **Result:** v1: 85–87% of the energy below 300 Hz (drone) and 13–15% in the melodic band (300 Hz–3 kHz), which would sound like a hum. v2: 60–66% low, 34–40% melodic. All candidates come out at about -14.4 LUFS, peak -1.0 dBFS, with no energy above 3 kHz (no hiss, and no clash with speech sibilance).
 - **Evidence:** runs 20261126T095940Z (v1) and the next compose run (v2); outputs/music/candidates/tizita_* (both versions kept)
-- **Decision:** v2. Seed 11 provisionally, as the least melodically busy (34%), following "no strong lead melody under narration". To confirm by ear under the voice.
+- **Decision:** v2. Seed 11 provisionally, as the least melodically busy (34%), following "no strong lead melody under narration".
+- **Follow-up after user test 1 ("the sound lacks some taste"):** v3 added a bowed masenqo-like string, a kebero-like hand drum and a bass line, but measured 44–49% of its energy below 150 Hz, which phone speakers can't reproduce and which takes loudness away from the voice after normalisation. v4 moved the string up an octave and lightened the bass: <150 Hz 29–31%, 300 Hz–3 kHz 35–43%. Chosen: v4 seed 11 (35%, still the least busy). The v1–v4 files are all kept in outputs/music/candidates/.
+
+## E8: Why the first cut looked "frame by frame", and what fixed it
+- **Hypothesis (from user test 1):** viewers read the film as a slideshow because of how the stills move, not because they are stills.
+- **Change:** Replaced FFmpeg `zoompan` (which rounds the crop window to whole pixels, so slow moves step visibly) with a per-frame affine warp at sub-pixel precision and an ease-in-out curve. Added 0.6 s cross-dissolves instead of hard cuts, kerosene-lamp flicker on s03 and s04, and moving film grain on every shot.
+- **Result:** Smooth camera glide, with the shots flowing into each other. Rendering cost: PIL's affine warp took **157 ms/frame** at 720×1280 (≈40 min for a 1080p film in two ratios), while OpenCV's `warpAffine` took 45 ms/frame, and a test segment went from 22.7 s to 5.0 s (4.5× faster).
+- **Evidence:** pipeline/assemble.py (`camera_frames`, `dissolve_join`, `effects_filter`); timing runs in this session
+- **Decision:** Keep it. Audio stays in sync because each shot carries the dissolve overlap at its end, so shot k still starts at the same timestamp. To be validated in user test 2.
 
 Ideas lined up (≈10):
 1. Style block on vs off: does the look stay consistent across shots? (same seeds)

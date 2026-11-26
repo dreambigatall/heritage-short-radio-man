@@ -30,16 +30,19 @@ If the file already exists, the stage skips the call. Editing one shot's narrati
 
 The narration sets the pace, as it does in a professional cut. Each shot lasts `max(duration_s, lead + narration length + pad)`, rounded to whole frames. Subtitles are timed from the same numbers. They are wrapped to 40 characters (30 in vertical) with at most two lines per cue, and kept above the bottom 16% of the vertical frame, where phone UI sits.
 
-## Sound
+## Sound: three layers
 
-1. The narration WAVs are placed on a timeline (`adelay` + `apad` + `atrim`, then `concat`).
-2. The score is looped and trimmed to length, set to `music_gain_db`, and faded in and out.
-3. Ducking: `sidechaincompress=threshold=0.02:ratio=6:attack=300:release=1500`, with the voice as the sidechain.
-4. Voice and ducked score are mixed, then `loudnorm=I=-14:TP=-1:LRA=11`. The result is measured with `ebur128` and written to `outputs/edit/timeline_*.json`.
+1. **Voice:** the narration WAVs are placed on a timeline (`adelay` + `apad` + `atrim`, then `concat`).
+2. **Score:** `pipeline/compose.py` (a code-composed tizita score; the ACE-Step notebook is the GPU alternative). It is looped and trimmed to length, set to `music_gain_db`, and faded in and out.
+3. **Effects/ambience:** `pipeline/sfx.py` generates a bed per shot from its `sfx` field (street, static, tuning, crowd, typing, room), each at a fixed RMS level.
+4. Score and effects are summed into a bed and ducked together under the voice: `sidechaincompress=threshold=0.02:ratio=6:attack=300:release=1500`.
+5. Voice and ducked bed are mixed, then `loudnorm=I=-14:TP=-1:LRA=11`. The result is measured with `ebur128` and written to `outputs/edit/timeline_*.json`.
 
 ## Picture
 
-- **Ken Burns:** the square keyframe is cropped to the target aspect, upscaled 3× (so zoompan's integer steps don't jitter), then `zoompan` applies a push-in, pull-out, pan or tilt.
+- **Camera moves (`camera_frames`):** the square keyframe is cropped to the target aspect (biased to the top third for 16:9, where faces are). Each frame is then an OpenCV affine warp with bicubic interpolation, so the push-in, pull-out, pan or tilt moves by fractions of a pixel on an ease-in-out curve. Frames are piped straight into FFmpeg. This replaced `zoompan`, which judders (EXPERIMENTS E8).
+- **In-frame life (`effects_filter`):** moving film grain and a vignette on every shot. `effects: ["flicker"]` adds lamp-light brightness modulation.
+- **Dissolves (`dissolve_join`):** each shot is rendered `dissolve_s` longer than its slot, and an `xfade` chain overlaps it with the next. Offsets are the cumulative shot durations, so the narration timeline does not move.
 - **Clips:** the first 0.25 s (often weak) is trimmed, the clip is slowed by up to 1.5× if it is shorter than the shot, cover-cropped, and the last frame held if it is still short.
 - **End card:** drawn with Pillow from `end_card.lines`.
 - **Encoding:** H.264, yuv420p, constant frame rate, AAC 192k, `+faststart`.

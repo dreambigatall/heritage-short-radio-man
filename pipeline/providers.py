@@ -80,12 +80,20 @@ def gemini_tts(model: str, text: str, voice_name: str, style_instruction: str) -
         raise RetryableError(f"No audio in response: {str(data)[:300]}") from e
     mime = part.get("mimeType", "")
     m = re.search(r"rate=(\d+)", mime)
-    return {
-        "pcm": base64.b64decode(part["data"]),
-        "rate": int(m.group(1)) if m else 24000,
-        "mime": mime,
-        "usage": data.get("usageMetadata", {}),
-    }
+    pcm, rate = unwrap_wav(base64.b64decode(part["data"]), int(m.group(1)) if m else 24000)
+    return {"pcm": pcm, "rate": rate, "mime": mime, "usage": data.get("usageMetadata", {})}
+
+
+def unwrap_wav(data: bytes, default_rate: int = 24000) -> tuple[bytes, int]:
+    """Some TTS models return a whole WAV file, not raw PCM. Treating it as PCM plays the
+    header as a click and the trailing metadata chunk as ~100 ms of noise (FAILURES F11)."""
+    if data[:4] != b"RIFF":
+        return data, default_rate
+    import io
+    import wave
+
+    with wave.open(io.BytesIO(data)) as w:
+        return w.readframes(w.getnframes()), w.getframerate()
 
 
 # ---------------------------------------------------------------- Cloudflare Workers AI

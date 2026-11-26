@@ -19,7 +19,7 @@ import numpy as np
 from common import call_logged, input_hash, load_storyboard, outdir, rel
 
 SR = 44100
-VERSION = "tizita-synth-v2"  # v2: drone -7 dB so the plucked theme leads (v1 was 87% drone energy)
+VERSION = "tizita-synth-v4"  # v2: drone -7 dB; v3: + bowed string, hand drum, bass (user test 1); v4: string up an octave, lighter bass (v3 was 44-49% below 150 Hz)
 SCALE = [0, 2, 4, 7, 9]  # tizita major: A B C# E F# as semitones above A
 A3 = 220.0
 
@@ -40,6 +40,33 @@ def pluck(freq: float, dur: float, amp: float, rng: np.random.Generator) -> np.n
     out[: len(attack)] += 0.25 * attack
     out *= np.minimum(1, t / 0.004)  # 4 ms fade-in to avoid clicks
     return amp * out
+
+
+def bowed(freq: float, dur: float, amp: float) -> np.ndarray:
+    """Masenqo-like bowed string: rich harmonics, slow bow attack, gentle vibrato."""
+    n = int(dur * SR)
+    t = np.arange(n) / SR
+    vib = 1 + 0.004 * np.sin(2 * np.pi * 5.2 * t) * np.minimum(1, t / 1.2)
+    phase = 2 * np.pi * freq * np.cumsum(vib) / SR
+    out = sum((0.75 ** h) / h * np.sin(h * phase) for h in range(1, 7))
+    env = np.minimum(1, t / 0.9) * np.minimum(1, (dur - t) / 1.0).clip(0, 1)
+    return amp * out * env
+
+
+def drum(kind: str, amp: float, rng: np.random.Generator) -> np.ndarray:
+    """Kebero-like hand drum: 'doum' = low pitched thump, 'tek' = dry slap."""
+    if kind == "doum":
+        n = int(0.45 * SR)
+        t = np.arange(n) / SR
+        f = 55 + 45 * np.exp(-t * 18)
+        return amp * np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t * 7)
+    n = int(0.12 * SR)
+    t = np.arange(n) / SR
+    x = rng.normal(0, 1, n) * np.exp(-t * 45)
+    X = np.fft.rfft(x)
+    f = np.fft.rfftfreq(n, 1 / SR)
+    X[(f < 700) | (f > 3500)] = 0
+    return amp * 0.6 * np.fft.irfft(X, n)
 
 
 def drone(total: float) -> np.ndarray:
@@ -98,6 +125,31 @@ def compose(cue: dict, seed: int) -> np.ndarray:
         t += beat * (2 if frac < 0.7 else 1)
         phrase += 1
     place(pluck(note_freq(0, 0), beat * 8, 0.3, rng), total - 4, 0.5)  # final resolution on A
+
+    # --- v3 layers, with their own RNG so each seed keeps the same krar theme as v2 ---
+    rng2 = np.random.default_rng(seed + 1000)
+    bar = beat * 4
+    progression = [0, 4, 3, 0]                      # A, F#, E, A: a tizita turnaround
+    t2, k = total * 0.12, 0
+    while t2 < total - 2:
+        frac = t2 / total
+        root = progression[k % 4]
+        lift = 1.6 if frac > 0.7 else 1.0
+        dur = min(bar * 2 + 1.0, total + 2 - t2)
+        place(bowed(note_freq(root, 0), dur, 0.045 * lift), t2, 0.3)           # bowed string, masenqo register
+        place(bowed(note_freq(root + 2, 0), dur, 0.028 * lift), t2 + 0.15, 0.7)   # and a third above
+        place(pluck(note_freq(root, -1), bar * 2, 0.12, rng2), t2, 0.5)        # bass on each change
+        t2 += bar * 2
+        k += 1
+    t3 = total * 0.28
+    while t3 < total * 0.9:                         # hand drum from the "word spread" section on
+        frac = t3 / total
+        g = 0.10 if frac < 0.7 else 0.13
+        place(drum("doum", g, rng2), t3, 0.5)
+        place(drum("tek", g * 0.8, rng2), t3 + beat * 1.5, 0.62)
+        place(drum("doum", g * 0.7, rng2), t3 + beat * 2, 0.5)
+        place(drum("tek", g * 0.8, rng2), t3 + beat * 3, 0.38)
+        t3 += bar
 
     d = 0.45 * drone(total + 3)
     left, right = reverb(left + d, rng), reverb(right + d, rng)

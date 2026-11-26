@@ -22,6 +22,19 @@ def write_wav(path: Path, pcm: bytes, rate: int) -> None:
         w.writeframes(pcm)
 
 
+def repair_wrapped(path: Path) -> bool:
+    """Fix clips saved before unwrap_wav existed: the frames hold a whole WAV file."""
+    from providers import unwrap_wav
+
+    with wave.open(str(path), "rb") as w:
+        frames, rate = w.readframes(w.getnframes()), w.getframerate()
+    if frames[:4] != b"RIFF":
+        return False
+    pcm, rate = unwrap_wav(frames, rate)
+    write_wav(path, pcm, rate)
+    return True
+
+
 def wav_duration(path: Path) -> float:
     with wave.open(str(path), "rb") as w:
         return w.getnframes() / w.getframerate()
@@ -67,6 +80,8 @@ def run(only: list[str] | None = None, placeholders: bool = False, force: bool =
                 cost_units=lambda r: r["usage"].get("candidatesTokenCount"), unit_name="output_tokens",
             )
             write_wav(path, res["pcm"], res["rate"])
+        if not placeholders and repair_wrapped(path):
+            print(f"        repaired: removed embedded WAV header/trailer (F11)")
         manifest[sid] = {"file": rel(path), "duration_s": round(wav_duration(path), 3), "hash": h,
                          "placeholder": placeholders}
         print(f"        {manifest[sid]['duration_s']:.2f}s")

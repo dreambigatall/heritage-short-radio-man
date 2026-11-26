@@ -64,7 +64,7 @@ On free tiers, $0. Measured latency, GPU minutes and list-price equivalents are 
 | `pipeline/` | One script per stage, plus `common.py` (logging, caching, retries, FFmpeg) and `providers.py` (HTTP clients) |
 | `notebooks/` | Kaggle GPU jobs for Wan 2.2 and ACE-Step |
 | `runs.jsonl` | One line per model call: model, params, seed, latency, units, cost |
-| `outputs/` | Generated audio, images, clips and films, named `<shot>_<input-hash>` |
+| `outputs/` | Generated narration, keyframes and logs, named `<shot>_<input-hash>`. Films and score WAVs are **not** in git (too large to push); `python run.py film` rebuilds them, and the score is recomposed automatically. The finished films are linked in the submission. |
 | [DESIGN.md](DESIGN.md) | Audience, intent, both user tests and what they changed |
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Stages, contracts, caching, failure handling |
 | [EXPERIMENTS.md](EXPERIMENTS.md) | Hypothesis → change → result |

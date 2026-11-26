@@ -60,6 +60,12 @@ def run() -> dict:
     chosen = music.get("chosen")
     if chosen:
         path = cand_dir / chosen
+        if not path.exists() and chosen.startswith("tizita_"):
+            # code-composed scores are not stored in git; they are rebuilt deterministically
+            import compose
+
+            print("  chosen score not on disk: recomposing it (deterministic)")
+            compose.run()
         if not path.exists():
             raise SystemExit(f"music.chosen = {chosen!r} but {rel(path)} does not exist.")
         entry = {"file": rel(path), "placeholder": False, "reason": music.get("chosen_reason", "")}

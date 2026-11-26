@@ -1,17 +1,15 @@
 # Ethics: consent, licences, labelling
 
-## Consent (recorded BEFORE generating anything of a real person)
+## Consent: no real person is depicted or voiced
 
-| Person | Relationship | Appears as | Consent given for | How recorded | Date |
-|---|---|---|---|---|---|
-| My father | Father | An **illustrated character inspired by him**, at about 20 and in his sixties. Not generated from any photo of him: the images come from a text description and an AI reference portrait, so it is not a likeness of his real face. He is not named in the film. | His story as told in the 9 narration lines in storyboard.json, the illustrated depiction, and public posting with an AI label | TODO: e.g. "WhatsApp voice note, 26 Nov 2026, after hearing the radio cut" (kept privately, not in this repo) | TODO |
-| Me (narrator) | – | Hands and a laptop only, never a face | – | – | – |
-
-- **No real voice is cloned or used.** The narration is Gemini's synthetic voice "Kore", reading words I wrote. It is not my father's voice or mine.
-- **His words:** the quote in s07 ("Everything that is broken can be understood…") is TODO: confirm it is something he really said, or that he agrees to it being attributed to him.
+**The Radio Man is a work of fiction.** The father and the narrating son are invented characters, inspired by a novel I read, not my own family. So:
+- **No real person's face or likeness is generated.** Both characters come from text descriptions and AI reference portraits, not from any photo.
+- **No real voice is used or cloned.** The narration is Gemini's synthetic voice "Kore" reading words written for the film.
+- **The film says so:** the end card reads "A work of fiction, inspired by a novel I read", and the public post states it too.
+- **Source material:** the film borrows the spirit of a story I read, not its text. Narration, prompts and images are original to this project. Book: TODO (title and author), credited in the post.
 
 ## Private data
-Family details sent to free endpoints may be used for training. What I kept out of every prompt and narration line: my father's name, the name of the town, any address, photos of family members, and anything about health or money. The prompts describe only a generic 1980s Ethiopian town and an illustrated character.
+Family details sent to free endpoints may be used for training. What I kept out of every prompt and narration line: names of real people, photos of anyone, addresses, and anything about health or money. The prompts describe only a generic 1980s Ethiopian town and an illustrated character.
 
 ## Licences
 

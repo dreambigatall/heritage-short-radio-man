@@ -53,13 +53,13 @@
         ]
       }
     ],
-    "chosen": null,
-    "chosen_reason": "Placeholder until ACE-Step candidates exist.",
+    "chosen": "tizita_main_seed11_1822ca2a5c.wav",
+    "chosen_reason": "Provisional: of the three tizita-synth-v2 candidates, seed 11 has the smallest share of melodic energy (34% in 300 Hz-3 kHz vs 38% and 40%), so it competes least with the narration, following the brief's 'no strong lead melody' advice. To be confirmed by listening under the narration (EXPERIMENTS E7).",
     "music_gain_db": -6
   },
   "output": {
     "fps": 24,
-    "quality": "draft",
+    "quality": "final",
     "narration_pad_s": 0.6,
     "narration_lead_s": 0.3
   },
@@ -68,7 +68,7 @@
       "Made with AI",
       "Images: FLUX.2 klein",
       "Voice: Gemini 3.8 Flash Lite TTS",
-      "Music: ACE-Step 1.5",
+      "Music: original score composed in code (tizita scale)",
       "My father's story, shared with his consent"
     ],
     "duration_s": 3

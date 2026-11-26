@@ -48,3 +48,9 @@ What broke, what I tried, what fixed it. Newest at the bottom.
 ## F9: Cloudflare's content filter flagged an innocent prompt
 - **What broke:** s07 "…radio … rests in his two hands on his lap…" returned `HTTP 400 AiError 3030: Your output has been flagged`. The stage stopped, because it is a non-retryable 4xx.
 - **Fixed:** Reworded to "he holds up an old wooden transistor radio…". Lesson: body-position phrasing ("on his lap") with a person can trip the output filter, so describe the object and the action instead.
+
+## F10: ACE-Step on Kaggle did not produce a score before the deadline
+- **What broke:** My first run of the generated notebook (`outputs/kaggle/acestep_heritage.ipynb`) on Kaggle failed, and as a first-time Kaggle user I could not get it working in the time left on deadline day. TODO: add the exact step or error you saw (Internet toggle / install cell / generation cell).
+- **What I had prepared:** API names checked against the ACE-Step-1.5 source (handler init, the LLM planner with a DiT-only fallback, fp16 handled by the library on T4), jobs embedded in the notebook so no dataset upload was needed, and a log format that `run.py import-kaggle` merges.
+- **Workaround:** `pipeline/compose.py`, a deterministic code-composed score: krar-like plucked notes on the tizita major pentatonic scale (A B C# E F#) over a soft drone, with a theme that returns an octave higher for the ending. Three seeds, logged in runs.jsonl as `tizita-synth-v*`, the same as any other model call. The notebook stays in the repo: once it runs, the candidates drop into `outputs/music/candidates/` and switching is one line (`music.chosen`).
+- **Lesson:** Budget first-time platform setup as its own task. The GPU part was never the risky bit; the account and the UI were.

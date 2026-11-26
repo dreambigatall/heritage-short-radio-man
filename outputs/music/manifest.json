@@ -1,7 +1,7 @@
 {
   "score": {
-    "file": "outputs/music/placeholder_3f9b12305b.wav",
-    "placeholder": true,
-    "reason": "no candidate chosen yet"
+    "file": "outputs/music/candidates/tizita_main_seed11_1822ca2a5c.wav",
+    "placeholder": false,
+    "reason": "Provisional: of the three tizita-synth-v2 candidates, seed 11 has the smallest share of melodic energy (34% in 300 Hz-3 kHz vs 38% and 40%), so it competes least with the narration, following the brief's 'no strong lead melody' advice. To be confirmed by listening under the narration (EXPERIMENTS E7)."
   }
 }

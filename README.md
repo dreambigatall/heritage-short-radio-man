@@ -34,6 +34,7 @@ python run.py film              # the whole pipeline -> outputs/film/film_9x16_*
 | `python run.py script --story story.md` | Gemini drafts `storyboard.draft.json` from your notes. It never overwrites the real storyboard. |
 | `python run.py shots` | Writes `outputs/kaggle/jobs.json` for shots marked `"video": "wan"` |
 | `python run.py import-kaggle` | Merges the GPU logs from Kaggle into `runs.jsonl` |
+| `python run.py compose` | Writes the fallback score candidates (code-composed, tizita scale) into `outputs/music/candidates/` |
 | `python run.py costs` | Per-stage table of calls, failures, latency, units and list price, from `runs.jsonl` |
 | `python run.py validate` | Checks the storyboard against `schema/storyboard.schema.json`, plus cross-references |
 

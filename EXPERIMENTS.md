@@ -53,6 +53,13 @@ Template:
 - **Evidence:** storyboard.json history; keyframes s01/s06 under both hashes
 - **Decision:** Every outdoor prompt names a local material, plant or garment, plus "no writing".
 
+## E7: Score balance: can the melody carry without fighting the voice?
+- **Hypothesis:** A drone plus plucked theme sits well under narration as composed.
+- **Change:** Measured the spectral energy of the three v1 candidates, then lowered the drone by about 7 dB (v2) and measured again.
+- **Result:** v1: 85–87% of the energy below 300 Hz (drone) and 13–15% in the melodic band (300 Hz–3 kHz), which would sound like a hum. v2: 60–66% low, 34–40% melodic. All candidates come out at about -14.4 LUFS, peak -1.0 dBFS, with no energy above 3 kHz (no hiss, and no clash with speech sibilance).
+- **Evidence:** runs 20261126T095940Z (v1) and the next compose run (v2); outputs/music/candidates/tizita_* (both versions kept)
+- **Decision:** v2. Seed 11 provisionally, as the least melodically busy (34%), following "no strong lead melody under narration". To confirm by ear under the voice.
+
 Ideas lined up (≈10):
 1. Style block on vs off: does the look stay consistent across shots? (same seeds)
 2. Character description verbatim in every prompt vs a short name only: identity drift

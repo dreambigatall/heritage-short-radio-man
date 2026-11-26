@@ -18,7 +18,8 @@ Family details sent to free endpoints may be used for training. What I kept out 
 | Component | Licence / terms | Notes |
 |---|---|---|
 | Wan 2.2 TI2V-5B | Apache 2.0 | notebook prepared, not used in the final film (see FAILURES F4) |
-| ACE-Step 1.5 | MIT; trained on licensed, royalty-free and synthetic data; outputs usable commercially | score |
+| Score (`pipeline/compose.py`) | My own code; the audio is original and generated deterministically, with no samples or training data | used in the final film |
+| ACE-Step 1.5 | MIT; trained on licensed, royalty-free and synthetic data; outputs usable commercially | notebook prepared, not used (FAILURES F10) |
 | FLUX.1 schnell | Apache 2.0 | smoke test only |
 | FLUX.2 klein 4B | Apache 2.0 (the 9B is non-commercial) | used for all keyframes, via Cloudflare Workers AI terms |
 | Gemini API: 2.5 Flash (script draft), 3.8 Flash Lite TTS (narration) | Google Gemini API terms (free tier: inputs may be used to improve products) | |

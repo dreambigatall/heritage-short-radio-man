@@ -4,7 +4,7 @@
     python run.py radio              validate -> narration -> music -> radio cut (narration over black)
     python run.py <stage> [--only s03 s07]
                                      stages: validate, smoke, script, narration, keyframes, shots, music,
-                                             assemble, import-kaggle, costs
+                                             assemble, import-kaggle, costs, compose
     --placeholders                   no API calls: silent timing + drawn keyframes (tests the plumbing)
 
 Every stage is cached by a hash of its inputs, so re-running `film` after editing one shot in
@@ -33,7 +33,7 @@ def stage(name: str, fn, *a, **kw):
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("target", choices=["film", "radio", "validate", "smoke", "script", "narration", "keyframes",
-                                       "shots", "music", "assemble", "import-kaggle", "costs"])
+                                       "shots", "music", "assemble", "import-kaggle", "costs", "compose"])
     ap.add_argument("--only", nargs="*", help="limit narration/keyframes/shots to these shot ids")
     ap.add_argument("--placeholders", action="store_true", help="no API calls; stand-in audio and images")
     ap.add_argument("--force", action="store_true", help="ignore caches for narration/keyframes")
@@ -46,6 +46,9 @@ def main() -> None:
     if a.target == "smoke":
         import smoke_test
         return smoke_test.run()
+    if a.target == "compose":
+        import compose
+        return compose.run()
     if a.target == "costs":
         import costs
         return costs.run()

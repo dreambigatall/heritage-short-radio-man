@@ -1,0 +1,32 @@
+[
+  {
+    "cue": "main",
+    "seed": 11,
+    "caption": "warm nostalgic instrumental, soft Ethiopian krar plucked strings, gentle masenqo-like bowed string, light hand percussion, subtle analog tape warmth, intimate and hopeful, sparse, no lead melody",
+    "bpm": 76,
+    "keyscale": "A minor",
+    "duration": 90,
+    "instrumental": true,
+    "out_name": "main_seed11_24245f13be"
+  },
+  {
+    "cue": "main",
+    "seed": 22,
+    "caption": "warm nostalgic instrumental, soft Ethiopian krar plucked strings, gentle masenqo-like bowed string, light hand percussion, subtle analog tape warmth, intimate and hopeful, sparse, no lead melody",
+    "bpm": 76,
+    "keyscale": "A minor",
+    "duration": 90,
+    "instrumental": true,
+    "out_name": "main_seed22_24245f13be"
+  },
+  {
+    "cue": "main",
+    "seed": 33,
+    "caption": "warm nostalgic instrumental, soft Ethiopian krar plucked strings, gentle masenqo-like bowed string, light hand percussion, subtle analog tape warmth, intimate and hopeful, sparse, no lead melody",
+    "bpm": 76,
+    "keyscale": "A minor",
+    "duration": 90,
+    "instrumental": true,
+    "out_name": "main_seed33_24245f13be"
+  }
+]

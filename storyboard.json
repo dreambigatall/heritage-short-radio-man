@@ -1,0 +1,209 @@
+{
+  "$schema": "./schema/storyboard.schema.json",
+  "title": "The Radio Man (የሬዲዮ ሰው)",
+  "logline": "My father taught himself to repair radios in a small Ethiopian town, and that is why I write code today.",
+  "language": "am",
+  "audience": "My family (parents, siblings, cousins at home and in the diaspora) and young Ethiopians learning tech; watching on phones, mostly vertical, shared on WhatsApp and Telegram.",
+  "intent": "Feel pride in an ordinary man's curiosity, and see that fixing radios and writing code are the same gift passed from father to child.",
+  "style": {
+    "style_block": "warm hand-painted illustration, soft painterly brushwork, gentle film grain, 1980s small Ethiopian town, muted palette of ochre, warm brown, faded teal and cream, soft window light, subject centred in frame, nostalgic and intimate",
+    "negative": "text, letters, words, watermark, logo, extra fingers, distorted hands, distorted face, modern smartphone"
+  },
+  "models": {
+    "image": "@cf/black-forest-labs/flux-2-klein-4b",
+    "image_steps": 4,
+    "image_size": 1024,
+    "use_reference_images": true,
+    "send_seed": true,
+    "script": "gemini-2.5-flash"
+  },
+  "characters": [
+    {
+      "id": "father_young",
+      "name": "Father, in his early twenties (1980s)",
+      "description": "a young Habesha Ethiopian man in his early twenties, slim, dark brown skin, short tightly curled black hair, thin moustache, narrow face with high cheekbones, white short-sleeved button shirt, brown trousers",
+      "seed": 2001
+    },
+    {
+      "id": "father_old",
+      "name": "Father, today",
+      "description": "a Habesha Ethiopian man in his sixties, dark brown skin, short tightly curled grey hair, grey moustache, narrow face with high cheekbones, round reading glasses, beige cardigan over a white shirt",
+      "seed": 2002
+    }
+  ],
+  "voice": {
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice_name": "Kore",
+    "style_instruction": ""
+  },
+  "music": {
+    "cues": [
+      {
+        "id": "main",
+        "purpose": "Curious and warm under the workshop scenes, opening up with quiet pride at the father-to-child reveal.",
+        "caption": "warm nostalgic instrumental, soft Ethiopian krar plucked strings, gentle masenqo-like bowed string, light hand percussion, subtle analog tape warmth, intimate and hopeful, sparse, no lead melody",
+        "bpm": 76,
+        "key": "A minor",
+        "duration_s": 90,
+        "instrumental": true,
+        "seeds": [
+          11,
+          22,
+          33
+        ]
+      }
+    ],
+    "chosen": null,
+    "chosen_reason": "Placeholder until ACE-Step candidates exist.",
+    "music_gain_db": -6
+  },
+  "output": {
+    "fps": 24,
+    "quality": "draft",
+    "narration_pad_s": 0.6,
+    "narration_lead_s": 0.3
+  },
+  "end_card": {
+    "lines": [
+      "Made with AI",
+      "Images: FLUX.2 klein",
+      "Voice: Gemini 3.8 Flash Lite TTS",
+      "Music: ACE-Step 1.5",
+      "My father's story, shared with his consent"
+    ],
+    "duration_s": 3
+  },
+  "shots": [
+    {
+      "id": "s01",
+      "reason": "To set the historical context and importance of radios in the community.",
+      "shot_size": "wide",
+      "duration_s": 6,
+      "image_prompt": "a small Ethiopian highland town street in the 1980s, low tin-roofed shops, eucalyptus trees, townspeople in white netela shawls and gabi, a man carrying a transistor radio on his shoulder, plain shopfronts with no signs and no writing, warm morning sunlight",
+      "seed": 101,
+      "camera": "pull_out",
+      "video": "kenburns",
+      "narration": "በ1980ዎቹ መጨረሻ፣ በትንሽ ከተማችን ሬዲዮ የዓለም መስኮት ነበር። ዜና፣ ሙዚቃ፣ እግር ኳስ - ሁሉም በሬዲዮ ይመጣ ነበር።",
+      "subtitle_en": "In the late 1980s, in our small town, radio was the window to the world. News, music, football – everything came through the radio.",
+      "music_cue": "main"
+    },
+    {
+      "id": "s02",
+      "reason": "To introduce the father and the beginning of his journey with radios.",
+      "shot_size": "medium",
+      "duration_s": 7,
+      "characters": [
+        "father_young"
+      ],
+      "image_prompt": "crouching beside a pile of discarded junk in a dusty courtyard, holding up a broken old radio in both hands and studying it with curiosity, side view",
+      "seed": 102,
+      "camera": "static",
+      "video": "kenburns",
+      "narration": "አባቴ ገና ወጣት እያለ አንድ የተበላሸ ሬዲዮ አገኘ። ከመጣል ይልቅ ምን እንዳለ ለማየት ከፈተው።",
+      "subtitle_en": "When my father was still young, he found a broken radio. Instead of throwing it away, he opened it to see what was inside.",
+      "music_cue": "main"
+    },
+    {
+      "id": "s03",
+      "reason": "To highlight the father's hands-on curiosity and the intricate work.",
+      "shot_size": "close_up",
+      "duration_s": 6,
+      "characters": [
+        "father_young"
+      ],
+      "image_prompt": "seen from the side, looking down at his work, not looking at the camera: his hands lift the back panel off an old transistor radio on a wooden table, revealing coloured wires and circuit parts, kerosene lamp light",
+      "seed": 103,
+      "camera": "push_in",
+      "video": "kenburns",
+      "narration": "አስተማሪም ሆነ መጽሐፍ አልነበረውም። በኬሮሲን ፋኖስ ብርሃን ሌሊት ሙሉ ሽቦዎችን በጥንቃቄ ይፈትሻል።",
+      "subtitle_en": "He had no teacher or books. By the light of a kerosene lamp, night after night, he carefully traced the wires.",
+      "music_cue": "main"
+    },
+    {
+      "id": "s04",
+      "reason": "To show his dedication and the challenging conditions of his learning.",
+      "shot_size": "medium_close_up",
+      "duration_s": 8,
+      "characters": [
+        "father_young"
+      ],
+      "image_prompt": "smiling with quiet pride at night in his small workshop, the repaired transistor radio on the table in front of him with its tuning dial glowing, a kerosene lamp beside it, tools and wires scattered around",
+      "seed": 104,
+      "camera": "static",
+      "video": "kenburns",
+      "narration": "ሬዲዮው እንደገና እስኪናገር ድረስ ሳይታክት ይሰራ ነበር።",
+      "subtitle_en": "He worked tirelessly until the radio spoke again.",
+      "music_cue": "main",
+      "use_reference": false
+    },
+    {
+      "id": "s05",
+      "reason": "To show the growth of his skill and the increasing demand for his services.",
+      "shot_size": "insert",
+      "duration_s": 5,
+      "image_prompt": "a wooden table covered with various old radio components, colored wires, vacuum tubes, small screwdrivers, and scattered screws, seen from above",
+      "seed": 105,
+      "camera": "pan_right",
+      "video": "kenburns",
+      "narration": "ወሬው ተሰራጨ። ጎረቤቶች ሬዲዮዎቻቸውን ማምጣት ጀመሩ። ጠረጴዛው በሽቦና በመለዋወጫ ሞላ።",
+      "subtitle_en": "Word spread. Neighbors started bringing their radios. His table filled with wires and spare parts.",
+      "music_cue": "main"
+    },
+    {
+      "id": "s06",
+      "reason": "To illustrate the community's reliance on him and the importance of his work.",
+      "shot_size": "wide",
+      "duration_s": 7,
+      "image_prompt": "a line of Ethiopian neighbours in the 1980s waiting outside a humble wooden door, women in white netela shawls, men in plain jackets and gabi, several holding old transistor radios, warm afternoon light, no writing",
+      "seed": 106,
+      "camera": "static",
+      "video": "kenburns",
+      "narration": "ቅዳሜዎች ሰዎች ዜና ወይም የእግር ኳስ ጨዋታ እንዳያመልጣቸው ከበሩ ውጭ ይጠብቁ ነበር።",
+      "subtitle_en": "On Saturdays, people waited outside his door so they wouldn't miss the news or the football match.",
+      "music_cue": "main"
+    },
+    {
+      "id": "s07",
+      "reason": "To convey the father's core wisdom that shaped the narrator's perspective.",
+      "shot_size": "medium_close_up",
+      "duration_s": 8,
+      "characters": [
+        "father_old"
+      ],
+      "image_prompt": "sitting in an armchair at home, he holds up an old wooden transistor radio with a round tuning dial and a silver antenna, looking at the radio with a gentle smile, soft window light",
+      "seed": 107,
+      "camera": "push_in",
+      "video": "kenburns",
+      "narration": "አንድ ጊዜ እንዲህ ብሎኝ ነበር፡ \"የተበላሸ ነገር ሁሉ ሊታወቅ ይችላል። መክፈትና ማየት ብቻ ነው የሚያስፈልገው።\"",
+      "subtitle_en": "He once told me: \"Everything that is broken can be understood. You just have to open it and look.\"",
+      "music_cue": "main",
+      "use_reference": false
+    },
+    {
+      "id": "s08",
+      "reason": "To visually bridge the past and present, connecting the father's work to the narrator's.",
+      "shot_size": "medium",
+      "duration_s": 7,
+      "image_prompt": "an old, polished radio sits on a wooden shelf next to a modern laptop, a hand hovers over the laptop keyboard, warm interior lighting",
+      "seed": 108,
+      "camera": "pull_out",
+      "video": "kenburns",
+      "narration": "ዛሬ እኔም ነገሮችን አስተካክላለሁ። ሬዲዮ ሳይሆን ኮድ። ፕሮግራም ሲበላሽ እከፍታለሁ፣ እርሱ እንዳስተማረኝ።",
+      "subtitle_en": "Today, I fix things too. Not radios, but code. When a program breaks, I open it and look, just as he taught me.",
+      "music_cue": "main"
+    },
+    {
+      "id": "s09",
+      "reason": "To provide a final, intimate connection between father and child, fulfilling the film's intent.",
+      "shot_size": "close_up",
+      "duration_s": 9,
+      "image_prompt": "close-up of young hands typing on a modern thin laptop keyboard, the screen is a soft out-of-focus glow with no readable text, an old wooden transistor radio on the desk beside it, warm evening light",
+      "seed": 109,
+      "camera": "static",
+      "video": "kenburns",
+      "narration": "የእርሱ ጠረጴዛ የእኔ ላፕቶፕ ሆነ። ተመሳሳይ የማወቅ ጉጉት፣ አዲስ አይነት ሽቦ። የሬዲዮ ሰው ልጅ።",
+      "subtitle_en": "His table became my laptop. The same curiosity, a new kind of wire. The Radio Man's child.",
+      "music_cue": "main"
+    }
+  ]
+}

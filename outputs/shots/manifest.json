@@ -1,0 +1,56 @@
+{
+  "s01": {
+    "type": "kenburns",
+    "file": "outputs/keyframes/s01_5b962211fa.png",
+    "camera": "pull_out",
+    "keyframe_hash": "5b962211fa"
+  },
+  "s02": {
+    "type": "kenburns",
+    "file": "outputs/keyframes/s02_31bff0fa1d.png",
+    "camera": "static",
+    "keyframe_hash": "31bff0fa1d"
+  },
+  "s03": {
+    "type": "kenburns",
+    "file": "outputs/keyframes/s03_61e21be461.png",
+    "camera": "push_in",
+    "keyframe_hash": "61e21be461"
+  },
+  "s04": {
+    "type": "kenburns",
+    "file": "outputs/keyframes/s04_1814b0506b.png",
+    "camera": "static",
+    "keyframe_hash": "1814b0506b"
+  },
+  "s05": {
+    "type": "kenburns",
+    "file": "outputs/keyframes/s05_7ed6c12f75.png",
+    "camera": "pan_right",
+    "keyframe_hash": "7ed6c12f75"
+  },
+  "s06": {
+    "type": "kenburns",
+    "file": "outputs/keyframes/s06_82d1e67dba.png",
+    "camera": "static",
+    "keyframe_hash": "82d1e67dba"
+  },
+  "s07": {
+    "type": "kenburns",
+    "file": "outputs/keyframes/s07_f79dfdf072.png",
+    "camera": "push_in",
+    "keyframe_hash": "f79dfdf072"
+  },
+  "s08": {
+    "type": "kenburns",
+    "file": "outputs/keyframes/s08_1cedc46a04.png",
+    "camera": "pull_out",
+    "keyframe_hash": "1cedc46a04"
+  },
+  "s09": {
+    "type": "kenburns",
+    "file": "outputs/keyframes/s09_e9bb6a8cb7.png",
+    "camera": "static",
+    "keyframe_hash": "e9bb6a8cb7"
+  }
+}

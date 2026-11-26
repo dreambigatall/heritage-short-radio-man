@@ -1,0 +1,71 @@
+{
+  "ref_grandmother": {
+    "file": "outputs/keyframes/ref_grandmother_765908bbdf_placeholder.png",
+    "hash": "765908bbdf",
+    "prompt": "character reference portrait of an elderly Ethiopian woman in her seventies, kind lined face, white netela shawl with a thin coloured border over her head and shoulders, long white cotton dress, front view, head and shoulders, neutral calm expression, plain soft background, warm hand-painted illustration, soft golden-hour light, gentle film grain, muted earth palette of ochre, terracotta and deep green, subject centred in frame"
+  },
+  "s01": {
+    "file": "outputs/keyframes/s01_5b962211fa.png",
+    "hash": "5b962211fa",
+    "prompt": "a small Ethiopian highland town street in the 1980s, low tin-roofed shops, eucalyptus trees, townspeople in white netela shawls and gabi, a man carrying a transistor radio on his shoulder, plain shopfronts with no signs and no writing, warm morning sunlight. warm hand-painted illustration, soft painterly brushwork, gentle film grain, 1980s small Ethiopian town, muted palette of ochre, warm brown, faded teal and cream, soft window light, subject centred in frame, nostalgic and intimate",
+    "placeholder": false
+  },
+  "s02": {
+    "file": "outputs/keyframes/s02_31bff0fa1d.png",
+    "hash": "31bff0fa1d",
+    "prompt": "a young Habesha Ethiopian man in his early twenties, slim, dark brown skin, short tightly curled black hair, thin moustache, narrow face with high cheekbones, white short-sleeved button shirt, brown trousers, crouching beside a pile of discarded junk in a dusty courtyard, holding up a broken old radio in both hands and studying it with curiosity, side view. warm hand-painted illustration, soft painterly brushwork, gentle film grain, 1980s small Ethiopian town, muted palette of ochre, warm brown, faded teal and cream, soft window light, subject centred in frame, nostalgic and intimate",
+    "placeholder": false
+  },
+  "s03": {
+    "file": "outputs/keyframes/s03_61e21be461.png",
+    "hash": "61e21be461",
+    "prompt": "a young Habesha Ethiopian man in his early twenties, slim, dark brown skin, short tightly curled black hair, thin moustache, narrow face with high cheekbones, white short-sleeved button shirt, brown trousers, seen from the side, looking down at his work, not looking at the camera: his hands lift the back panel off an old transistor radio on a wooden table, revealing coloured wires and circuit parts, kerosene lamp light. warm hand-painted illustration, soft painterly brushwork, gentle film grain, 1980s small Ethiopian town, muted palette of ochre, warm brown, faded teal and cream, soft window light, subject centred in frame, nostalgic and intimate",
+    "placeholder": false
+  },
+  "s04": {
+    "file": "outputs/keyframes/s04_1814b0506b.png",
+    "hash": "1814b0506b",
+    "prompt": "a young Habesha Ethiopian man in his early twenties, slim, dark brown skin, short tightly curled black hair, thin moustache, narrow face with high cheekbones, white short-sleeved button shirt, brown trousers, smiling with quiet pride at night in his small workshop, the repaired transistor radio on the table in front of him with its tuning dial glowing, a kerosene lamp beside it, tools and wires scattered around. warm hand-painted illustration, soft painterly brushwork, gentle film grain, 1980s small Ethiopian town, muted palette of ochre, warm brown, faded teal and cream, soft window light, subject centred in frame, nostalgic and intimate",
+    "placeholder": false
+  },
+  "s05": {
+    "file": "outputs/keyframes/s05_7ed6c12f75.png",
+    "hash": "7ed6c12f75",
+    "prompt": "a wooden table covered with various old radio components, colored wires, vacuum tubes, small screwdrivers, and scattered screws, seen from above. warm hand-painted illustration, soft painterly brushwork, gentle film grain, 1980s small Ethiopian town, muted palette of ochre, warm brown, faded teal and cream, soft window light, subject centred in frame, nostalgic and intimate",
+    "placeholder": false
+  },
+  "s06": {
+    "file": "outputs/keyframes/s06_82d1e67dba.png",
+    "hash": "82d1e67dba",
+    "prompt": "a line of Ethiopian neighbours in the 1980s waiting outside a humble wooden door, women in white netela shawls, men in plain jackets and gabi, several holding old transistor radios, warm afternoon light, no writing. warm hand-painted illustration, soft painterly brushwork, gentle film grain, 1980s small Ethiopian town, muted palette of ochre, warm brown, faded teal and cream, soft window light, subject centred in frame, nostalgic and intimate",
+    "placeholder": false
+  },
+  "s07": {
+    "file": "outputs/keyframes/s07_f79dfdf072.png",
+    "hash": "f79dfdf072",
+    "prompt": "a Habesha Ethiopian man in his sixties, dark brown skin, short tightly curled grey hair, grey moustache, narrow face with high cheekbones, round reading glasses, beige cardigan over a white shirt, sitting in an armchair at home, he holds up an old wooden transistor radio with a round tuning dial and a silver antenna, looking at the radio with a gentle smile, soft window light. warm hand-painted illustration, soft painterly brushwork, gentle film grain, 1980s small Ethiopian town, muted palette of ochre, warm brown, faded teal and cream, soft window light, subject centred in frame, nostalgic and intimate",
+    "placeholder": false
+  },
+  "s08": {
+    "file": "outputs/keyframes/s08_1cedc46a04.png",
+    "hash": "1cedc46a04",
+    "prompt": "an old, polished radio sits on a wooden shelf next to a modern laptop, a hand hovers over the laptop keyboard, warm interior lighting. warm hand-painted illustration, soft painterly brushwork, gentle film grain, 1980s small Ethiopian town, muted palette of ochre, warm brown, faded teal and cream, soft window light, subject centred in frame, nostalgic and intimate",
+    "placeholder": false
+  },
+  "ref_father_young": {
+    "file": "outputs/keyframes/ref_father_young_b04824e1ae.png",
+    "hash": "b04824e1ae",
+    "prompt": "character reference portrait of a young Habesha Ethiopian man in his early twenties, slim, dark brown skin, short tightly curled black hair, thin moustache, narrow face with high cheekbones, white short-sleeved button shirt, brown trousers, front view, head and shoulders, neutral calm expression, plain soft background, warm hand-painted illustration, soft painterly brushwork, gentle film grain, 1980s small Ethiopian town, muted palette of ochre, warm brown, faded teal and cream, soft window light, subject centred in frame, nostalgic and intimate"
+  },
+  "ref_father_old": {
+    "file": "outputs/keyframes/ref_father_old_66f102af4b.png",
+    "hash": "66f102af4b",
+    "prompt": "character reference portrait of a Habesha Ethiopian man in his sixties, dark brown skin, short tightly curled grey hair, grey moustache, narrow face with high cheekbones, round reading glasses, beige cardigan over a white shirt, front view, head and shoulders, neutral calm expression, plain soft background, warm hand-painted illustration, soft painterly brushwork, gentle film grain, 1980s small Ethiopian town, muted palette of ochre, warm brown, faded teal and cream, soft window light, subject centred in frame, nostalgic and intimate"
+  },
+  "s09": {
+    "file": "outputs/keyframes/s09_e9bb6a8cb7.png",
+    "hash": "e9bb6a8cb7",
+    "prompt": "close-up of young hands typing on a modern thin laptop keyboard, the screen is a soft out-of-focus glow with no readable text, an old wooden transistor radio on the desk beside it, warm evening light. warm hand-painted illustration, soft painterly brushwork, gentle film grain, 1980s small Ethiopian town, muted palette of ochre, warm brown, faded teal and cream, soft window light, subject centred in frame, nostalgic and intimate",
+    "placeholder": false
+  }
+}

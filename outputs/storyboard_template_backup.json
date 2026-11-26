@@ -1,0 +1,198 @@
+{
+  "$schema": "./schema/storyboard.schema.json",
+  "title": "The Radio Man (የሬዲዮ ሰው)",
+  "logline": "My father taught himself to repair radios in a small Ethiopian town, and that is why I write code today.",
+  "language": "am",
+  "audience": "My family (parents, siblings, cousins at home and in the diaspora) and young Ethiopians learning tech; watching on phones, mostly vertical, shared on WhatsApp and Telegram.",
+  "intent": "Feel pride in an ordinary man's curiosity, and see that fixing radios and writing code are the same gift passed from father to child.",
+  "style": {
+    "style_block": "warm hand-painted illustration, soft painterly brushwork, gentle film grain, 1980s small Ethiopian town, muted palette of ochre, warm brown, faded teal and cream, soft window light, subject centred in frame, nostalgic and intimate",
+    "negative": "text, letters, words, watermark, logo, extra fingers, distorted hands, distorted face, modern smartphone"
+  },
+  "models": {
+    "image": "@cf/black-forest-labs/flux-2-klein-4b",
+    "image_steps": 4,
+    "image_size": 1024,
+    "use_reference_images": true,
+    "send_seed": true,
+    "script": "gemini-2.5-flash"
+  },
+  "characters": [
+    {
+      "id": "father_young",
+      "name": "Father, in his early twenties (1980s)",
+      "description": "a young Ethiopian man in his early twenties, slim, short curly black hair, thin moustache, warm brown skin, white short-sleeved button shirt, brown trousers",
+      "seed": 2001
+    },
+    {
+      "id": "father_old",
+      "name": "Father, today",
+      "description": "an Ethiopian man in his sixties, short grey curly hair, grey moustache, reading glasses, warm brown skin, beige cardigan over a white shirt",
+      "seed": 2002
+    }
+  ],
+  "voice": {
+    "model": "gemini-3.8-flash-tts",
+    "voice_name": "Kore",
+    "style_instruction": "Read slowly and warmly, like telling a story to a grandchild at bedtime."
+  },
+  "music": {
+    "cues": [
+      {
+        "id": "main",
+        "purpose": "Curious and warm under the workshop scenes, opening up with quiet pride at the father-to-child reveal.",
+        "caption": "warm nostalgic instrumental, soft Ethiopian krar plucked strings, gentle masenqo-like bowed string, light hand percussion, subtle analog tape warmth, intimate and hopeful, sparse, no lead melody",
+        "bpm": 76,
+        "key": "A minor",
+        "duration_s": 90,
+        "instrumental": true,
+        "seeds": [
+          11,
+          22,
+          33
+        ]
+      }
+    ],
+    "chosen": null,
+    "chosen_reason": "Placeholder until ACE-Step candidates exist.",
+    "music_gain_db": -6
+  },
+  "output": {
+    "fps": 24,
+    "quality": "draft",
+    "narration_pad_s": 0.6,
+    "narration_lead_s": 0.3
+  },
+  "end_card": {
+    "lines": [
+      "Made with AI",
+      "Images: FLUX.2 klein | Voice: Gemini 3.8 Flash TTS | Music: ACE-Step 1.5",
+      "My father's story, shared with his consent"
+    ],
+    "duration_s": 3
+  },
+  "shots": [
+    {
+      "id": "s01",
+      "reason": "Establish the town at dawn before we meet anyone.",
+      "shot_size": "extreme_wide",
+      "duration_s": 6,
+      "characters": [],
+      "image_prompt": "a small hillside town at dawn, tin roofs and eucalyptus trees, mist in the valley",
+      "seed": 101,
+      "motion_prompt": "mist drifts slowly across the valley, the camera pushes in very gently",
+      "camera": "push_in",
+      "video": "kenburns",
+      "narration": "Every Saturday, before the sun was fully up, my grandmother walked to the market.",
+      "subtitle_en": "Every Saturday, before the sun was fully up, my grandmother walked to the market.",
+      "music_cue": "main"
+    },
+    {
+      "id": "s02",
+      "reason": "Introduce her, so the viewer knows whose story this is.",
+      "shot_size": "medium",
+      "duration_s": 6,
+      "characters": [
+        "grandmother"
+      ],
+      "image_prompt": "standing in the doorway of a mud-brick house, holding a woven basket",
+      "seed": 102,
+      "motion_prompt": "she adjusts her shawl, the camera is fixed",
+      "camera": "static",
+      "video": "kenburns",
+      "narration": "She wrapped her shawl twice, picked up her basket, and called my name.",
+      "subtitle_en": "She wrapped her shawl twice, picked up her basket, and called my name.",
+      "music_cue": "main"
+    },
+    {
+      "id": "s03",
+      "reason": "The child's hand in hers: the relationship in one image.",
+      "shot_size": "insert",
+      "duration_s": 5,
+      "characters": [],
+      "image_prompt": "close-up of an old woman's hand holding a small child's hand on a dirt path",
+      "seed": 103,
+      "camera": "push_in",
+      "video": "kenburns",
+      "narration": "I held her hand the whole way.",
+      "subtitle_en": "I held her hand the whole way.",
+      "music_cue": "main"
+    },
+    {
+      "id": "s04",
+      "reason": "The walk itself: distance and effort.",
+      "shot_size": "wide",
+      "duration_s": 6,
+      "characters": [
+        "grandmother"
+      ],
+      "image_prompt": "walking along a dirt road between green fields, seen from behind, small child beside her",
+      "seed": 104,
+      "camera": "pan_right",
+      "video": "kenburns",
+      "narration": "The road was long, but she never hurried and she never stopped.",
+      "subtitle_en": "The road was long, but she never hurried and she never stopped.",
+      "music_cue": "main"
+    },
+    {
+      "id": "s05",
+      "reason": "Arrival: the market's colour and life.",
+      "shot_size": "wide",
+      "duration_s": 6,
+      "characters": [],
+      "image_prompt": "a busy open-air market, piles of spices and coffee beans, colourful umbrellas",
+      "seed": 105,
+      "camera": "pan_left",
+      "video": "kenburns",
+      "narration": "At the market, everyone knew her.",
+      "subtitle_en": "At the market, everyone knew her.",
+      "music_cue": "main"
+    },
+    {
+      "id": "s06",
+      "reason": "Her character: how she treated people.",
+      "shot_size": "medium_close_up",
+      "duration_s": 6,
+      "characters": [
+        "grandmother"
+      ],
+      "image_prompt": "laughing with a spice seller across a table of red berbere",
+      "seed": 106,
+      "camera": "push_in",
+      "video": "kenburns",
+      "narration": "She bargained hard, laughed louder, and always paid a little extra.",
+      "subtitle_en": "She bargained hard, laughed louder, and always paid a little extra.",
+      "music_cue": "main"
+    },
+    {
+      "id": "s07",
+      "reason": "The lesson she repeated, the emotional centre.",
+      "shot_size": "close_up",
+      "duration_s": 7,
+      "characters": [
+        "grandmother"
+      ],
+      "image_prompt": "her face in soft afternoon light, looking down kindly at someone just out of frame",
+      "seed": 107,
+      "camera": "push_in",
+      "video": "kenburns",
+      "narration": "Slowly, slowly, she would say, an egg will walk.",
+      "subtitle_en": "\"Slowly, slowly,\" she would say, \"an egg will walk.\"",
+      "music_cue": "main"
+    },
+    {
+      "id": "s08",
+      "reason": "Return to the road, now empty: time has passed.",
+      "shot_size": "extreme_wide",
+      "duration_s": 7,
+      "characters": [],
+      "image_prompt": "the same dirt road between green fields at sunset, empty, long shadows",
+      "seed": 108,
+      "camera": "pull_out",
+      "video": "kenburns",
+      "narration": "I still walk that road in my mind, slowly, the way she taught me.",
+      "subtitle_en": "I still walk that road in my mind, slowly, the way she taught me.",
+      "music_cue": "main"
+    }
+  ]
+}

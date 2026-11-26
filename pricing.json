@@ -1,0 +1,9 @@
+{
+  "_note": "List-price equivalents used to fill cost_usd_list_price in runs.jsonl. Units match the 'unit' field logged per call. Fill usd_per_unit only with prices you checked; record the source and date in COSTS.md.",
+  "models": {
+    "@cf/black-forest-labs/flux-1-schnell": {"unit": "cf_neurons", "usd_per_unit": 0.000011, "source": "Workers AI pricing page, $0.011 per 1,000 neurons above the 10,000/day free allocation, checked 2026-11-25"},
+    "@cf/black-forest-labs/flux-2-klein-4b": {"unit": "cf_neurons", "usd_per_unit": 0.000011, "source": "same"},
+    "gemini-2.5-flash-preview-tts": {"unit": "output_tokens", "usd_per_unit": null, "source": "TODO: check ai.google.dev/pricing"},
+    "gemini-2.5-flash": {"unit": "tokens", "usd_per_unit": null, "source": "TODO"}
+  }
+}
